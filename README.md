@@ -57,7 +57,7 @@ Develop SQL-based analytics to deliver insights into:
 ## 🚀 Getting Started
 1. **Clone this repository**
    ```bash
-   git clone https://github.com/<your-username>/<repo-name>.git
+   git clone https://github.com/PedroDaim/snowflake_sql_dwh.git
 2. **Create Snowflake environment (Warehouse, Database, Schemas: bronze, silver, gold).**
 3. **Load source data into the Bronze layer.**
 4. **Apply transformations using SQL/dbt to create Silver and Gold layers.**
