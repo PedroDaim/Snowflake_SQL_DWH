@@ -71,6 +71,7 @@ Develop SQL-based analytics to deliver insights into:
 ├── tests/            # Test cases for SQL/dbt transformations
 ├── LICENSE           # Project license
 └── README.md         # Project description and setup
+
 📖 Documentation
 
 **Data Model** – docs/data_model.md
