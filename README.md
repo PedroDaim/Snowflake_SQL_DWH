@@ -65,13 +65,19 @@ Develop SQL-based analytics to deliver insights into:
 
 📂 Repository Structure
 
+├── data/             # Placeholder for sample/raw datasets
+├── docs/             # Project documentation (ERD, BI queries, etc.)
+├── scripts/          # Utility scripts (SQL, dbt, Python, etc.)
+├── tests/            # Test cases for SQL/dbt transformations
+├── LICENSE           # Project license
+└── README.md         # Project description and setup
 📖 Documentation
 
-Data Model – docs/data_model.md
+**Data Model** – docs/data_model.md
 
-Analytics Queries – docs/bi_queries.md
+**Analytics Queries** – docs/bi_queries.md
 
-✅ Deliverables
+✅ **Deliverables**
 
 End-to-end Snowflake-based warehouse.
 
@@ -79,11 +85,11 @@ Clean, integrated analytical data model.
 
 Documented queries for customer behavior, product performance, and sales trends.
 
-🤝 Contributing
+🤝 **Contributing**
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-📜 License
+📜 **License**
 
 This project is licensed under the MIT License – see the LICENSE
  file for details.
