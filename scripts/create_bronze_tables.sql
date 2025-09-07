@@ -54,7 +54,8 @@ CREATE OR REPLACE TABLE crm_sales_details (
     sls_order_dt DATE, 
     sls_ship_dt  DATE,
     sls_due_dt   DATE,
-    sls_sales    NUMBER(10, 2), 
+    sls_sales    NUMBER(10, 2),
+    sls_quantity NUMBER,
     sls_price    NUMBER(10, 2)
 );
 COMMENT ON TABLE crm_sales_details IS 'Raw sales transaction details from the CRM system.';
