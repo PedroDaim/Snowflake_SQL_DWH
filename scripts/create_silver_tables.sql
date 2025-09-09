@@ -36,17 +36,18 @@ COMMENT ON TABLE crm_cust_info IS 'Added a create_date column to the raw crm cus
 
 -- Table: crm_prd_info
 -- Source: CRM system product information
-CREATE OR REPLACE TABLE crm_prd_info (
-    prd_id       INT,
-    prd_key      VARCHAR(50),
-    prd_nm       VARCHAR(50),
-    prd_cost     NUMBER(10, 2), 
-    prd_line     VARCHAR(50),
-    prd_start_dt TIMESTAMP_NTZ, 
-    prd_end_dt   TIMESTAMP_NTZ,
-    dwh_create_date TIMESTAMP_NTZ DEFAULT CURRENT_TIMESTAMP()
-);
-COMMENT ON TABLE crm_prd_info IS 'Added a create_date column to the raw crm product table from the bronze layer';
+CREATE OR REPLACE TABLE SALES_DWH.SILVER.CRM_PRD_INFO (
+	PRD_ID NUMBER(38,0),
+    CAT_ID VARCHAR(50),
+	PRD_KEY VARCHAR(50),
+	PRD_NM VARCHAR(50),
+	PRD_COST NUMBER(10,2),
+	PRD_LINE VARCHAR(50),
+	PRD_START_DT DATE,
+	PRD_END_DT DATE,
+	DWH_CREATE_DATE TIMESTAMP_NTZ(9) DEFAULT CURRENT_TIMESTAMP()
+)COMMENT='Copy from the raw crm_prd_info table from the bronze layer with a cat_id column and new datatype for the prd_start_dt and prd_end_dt because there is no need for timestamps since the original data only has 00:00:00 as values '
+;
 
 -- Table: crm_sales_details
 -- Source: CRM system sales transaction details
