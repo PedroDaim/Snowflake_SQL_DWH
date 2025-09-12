@@ -133,8 +133,18 @@ SELECT
     cst_key,
     cst_firstname,
     cst_lastname,
-    cst_marital_status,
-    cst_gndr,
+    -- Fix marital status (this should be 5th column)
+    CASE 
+        WHEN UPPER(TRIM(cst_marital_status)) = 'M' THEN 'Married'
+        WHEN UPPER(TRIM(cst_marital_status)) = 'S' THEN 'Single'
+        ELSE 'N/A'
+    END AS cst_marital_status,
+    -- Fix gender (this should be 6th column)
+    CASE
+        WHEN UPPER(TRIM(cst_gndr)) = 'M' THEN 'Male'
+        WHEN UPPER(TRIM(cst_gndr)) = 'F' THEN 'Female'
+        ELSE 'N/A'
+    END AS cst_gndr,
     cst_create_date,
     CURRENT_TIMESTAMP()
 FROM tmp_valid_customers;
@@ -156,9 +166,9 @@ SELECT
     cst_key,
     cst_firstname,
     cst_lastname,
-    NULL AS cst_marital_status,
-    cst_gndr,
-    NULL AS cst_create_date,
+    cst_marital_status,  -- Keep original values for audit trail
+    cst_gndr,           -- Keep original values for audit trail
+    cst_create_date,    -- Keep original values for audit trail
     error_reason,
     CURRENT_TIMESTAMP()
 FROM tmp_errors;
